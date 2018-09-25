@@ -8,8 +8,10 @@ import { registerController } from './controller';
 import { Provider } from './provider';
 import { IComponentController, IDirectiveFactory, IModule, Injectable } from 'angular';
 
+declare var ModuleRegister: any; //external ST lib
+
 export interface ModuleConfig {
-  id?: string;
+  id: string;
   declarations?: Array<IComponentController | Injectable<IDirectiveFactory> | PipeTransform>;
   imports?: Array<string | NgModule>;
   exports?: Function[];
@@ -29,10 +31,16 @@ export function NgModule({ id, bootstrap = [], declarations = [], imports = [], 
     // module registration
     const deps = imports.map(mod => typeof mod === 'string' ? mod : mod.module.name);
     if (!id) {
-      console.warn('You are not providing ngModule id, be careful this code won\'t work when uglified.');
-      id = (Class as any).name;
+      //console.warn('You are not providing ngModule id, be careful this code won\'t work when uglified.');
+      //id = (Class as any).name;
+      throw new Error('id is required'); //ST
     }
     const module = angular.module(id, deps);
+
+    //// ST custom 
+    (new ModuleRegister()).registerName(id);
+    ////
+
 
     // components, directives and filters registration
     declarations.forEach((declaration: any) => {
