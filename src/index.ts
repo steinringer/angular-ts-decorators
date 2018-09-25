@@ -1,6 +1,7 @@
 export { platformBrowserDynamic } from './bootstrap';
 export { Component } from './component';
 export { Directive } from './directive';
+export { Controller } from './controller';
 export { Injectable, Inject } from './injectable';
 export { Pipe, PipeTransform } from './pipe';
 export { Input, Output, ViewParent } from './input';

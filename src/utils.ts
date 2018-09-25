@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-export enum Declaration { Component = 'Component', Directive = 'Directive', Pipe = 'Pipe' }
+export enum Declaration { Component = 'Component', Directive = 'Directive', Pipe = 'Pipe', Controller = 'Controller' }
 
 /** @internal */
 export const metadataKeys = {

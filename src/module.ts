@@ -4,6 +4,7 @@ import { registerProviders } from './injectable';
 import { camelToKebab, Declaration, getMetadata, getTypeName, metadataKeys } from './utils';
 import { registerComponent } from './component';
 import { registerDirective } from './directive';
+import { registerController } from './controller';
 import { Provider } from './provider';
 import { IComponentController, IDirectiveFactory, IModule, Injectable } from 'angular';
 
@@ -46,10 +47,13 @@ export function NgModule({ id, bootstrap = [], declarations = [], imports = [], 
         case Declaration.Pipe:
           registerPipe(module, declaration);
           break;
+        case Declaration.Controller:
+          registerController(module, declaration);
+          break;
         default:
           console.error(
             `Can't find type metadata on ${declaration.name} declaration, did you forget to decorate it?
-            Decorate your declarations using @Component, @Directive or @Pipe decorator.`
+            Decorate your declarations using @Component, @Directive, @Pipe or @Controller decorator.`
           );
       }
     });
