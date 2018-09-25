@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vsternbach/angular-ts-decorators.git"
+    "url": "git+https://github.com/steinringer/angular-ts-decorators.git"
   },
-  "homepage": "https://github.com/vsternbach/angular-ts-decorators",
+  "homepage": "https://github.com/steinringer/angular-ts-decorators",
   "keywords": [
     "angular decorators",
     "angular-decorators",
@@ -64,7 +64,7 @@
     "test:dev": "karma start",
     "posttest": "cat ./coverage/lcov.info | coveralls",
     "build": "npm run clean && tsc && rollup -c && npm run uglify && copyfiles package.json README.md CHANGELOG.md LICENSE dist/ && rimraf dist/temp",
-    "uglify": "for f in dist/*.js; do ./node_modules/uglify-es/bin/uglifyjs $f --compress drop_console --mangle --output ${f%.js}.min.js; done",
+    "uglify": "for %f in (dist\\*.js) do ( uglifyjs %~ff --compress drop_console --mangle --output %~nf.min.js)",
     "release": "standard-version",
     "postrelease": "git push origin master --follow-tags"
   }
