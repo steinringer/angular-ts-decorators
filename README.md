@@ -4,3 +4,4 @@ Fork of [https://github.com/vsternbach/angular-ts-decorators](https://github.com
 - npm scripts ported to windows (for in loops)
 - id in module is required
 - added registrations to ST module system
+- added ensure of $inject static property
