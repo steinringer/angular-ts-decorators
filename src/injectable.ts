@@ -18,11 +18,10 @@ export function Inject(name: string) {
       return; // exit, don't change injection on target's constructor
     }
     // if @Inject decorator is on target's constructor
-    if (target.$inject) {
-      target.$inject[parameterIndex] = name;
-    } else {
-      console.error(`Annotations should be provided as static $inject property in order to use @Inject decorator`);
+    if(!target.$inject){
+      target.$inject = [];
     }
+    target.$inject[parameterIndex] = name;
   };
 }
 
