@@ -21,7 +21,7 @@ export interface ModuleConfig {
 
 export interface NgModule {
   module?: IModule;
-  config?(...args: any[]): any;
+  config? : ((...args: any[]) => any) | any[];
   run?(...args: any[]): any;
   [p: string]: any;
 }
