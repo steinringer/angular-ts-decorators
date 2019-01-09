@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.8.0"></a>
+# [3.8.0](https://github.com/steinringer/angular-ts-decorators/compare/v3.7.7...v3.8.0) (2019-01-09)
+
+
+### Features
+
+* **injectable:** add ensure of $inject static property ([ddde630](https://github.com/steinringer/angular-ts-decorators/commit/ddde630))
+* **module:** add ModuleRegister call ([fcc5442](https://github.com/steinringer/angular-ts-decorators/commit/fcc5442))
+* **module:** add support for config with explicit injection ([61665c6](https://github.com/steinringer/angular-ts-decorators/commit/61665c6))
+* **module:** add support for controller ([4f7ed71](https://github.com/steinringer/angular-ts-decorators/commit/4f7ed71))
+
+
+
 <a name="3.7.7"></a>
 ## [3.7.7](https://github.com/vsternbach/angular-ts-decorators/compare/v3.7.6...v3.7.7) (2018-08-23)
 
