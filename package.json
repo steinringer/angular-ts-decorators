@@ -1,12 +1,8 @@
 {
-  "name": "angular-ts-decorators",
+  "name": "@steinringer/angular-ts-decorators",
   "version": "3.8.0",
   "license": "MIT",
-  "author": {
-    "name": "Vlad Sternbach",
-    "email": "vlad.sternbach@gmail.com",
-    "url": "https://github.com/vsternbach"
-  },
+  "author": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steinringer/angular-ts-decorators.git"
