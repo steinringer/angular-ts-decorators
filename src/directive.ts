@@ -10,6 +10,7 @@ import { IController, IDirective, IModule, IDirectiveCompileFn, IDirectivePrePos
 export interface IDirectiveSt {
   compile?: IDirectiveCompileFn;
   link?: IDirectiveLinkFn | IDirectivePrePost;
+  [s: string]: any; //prevent ts(2345) when no compile nor link is defined
 }
 
 export interface DirectiveOptionsDecorated extends IDirective {
