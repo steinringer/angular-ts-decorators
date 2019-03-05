@@ -8,6 +8,6 @@ Fork of [https://github.com/vsternbach/angular-ts-decorators](https://github.com
 - directive class represents directive body instead of controller in order to be able to inject services into compile and link functions
 
 # How it was published to npm
-npm login (used steinringer credentials)
-npm run-script build
-npm publish dist --access public
+- npm login (used steinringer credentials)
+- npm run build
+- npm publish dist --access public
