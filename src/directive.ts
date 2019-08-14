@@ -53,7 +53,7 @@ export function registerDirective(module: IModule, ctorFn: DirectiveConstructor)
   //   extendWithHostListenersAndChildren(ctorFn, listeners, viewChildren) : ctorFn;
   // directiveFunc = () => options;
 
-  let facArray: any[] = ctorFn.$inject.slice();
+  let facArray: any[] = ctorFn.$inject ? ctorFn.$inject.slice() : [];
   facArray.push((...args) => {
     for (const key in options) {
       if (options.hasOwnProperty(key)) {
