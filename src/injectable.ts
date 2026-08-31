@@ -10,8 +10,12 @@ export function Injectable(name?: string) {
   };
 }
 
-export function Inject(name: string) {
-  return (target: any, propertyKey: string, parameterIndex: number) => {
+export function Inject(name: string): (
+  target: any,
+  propertyKey: string | symbol | undefined,
+  parameterIndex: number
+) => void {
+  return (target, propertyKey, parameterIndex) => {
     // if @Inject decorator is on target's method
     if (propertyKey && Array.isArray(target[propertyKey])) {
       target[propertyKey][parameterIndex] = name;
